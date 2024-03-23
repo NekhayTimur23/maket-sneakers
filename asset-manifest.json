@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/maket-sneakers/static/css/main.fcd0fca8.css",
-    "main.js": "/maket-sneakers/static/js/main.7a81acd5.js",
+    "main.css": "/maket-sneakers/static/css/main.faaa8c1b.css",
+    "main.js": "/maket-sneakers/static/js/main.72fd6556.js",
     "index.html": "/maket-sneakers/index.html",
-    "main.fcd0fca8.css.map": "/maket-sneakers/static/css/main.fcd0fca8.css.map",
-    "main.7a81acd5.js.map": "/maket-sneakers/static/js/main.7a81acd5.js.map"
+    "main.faaa8c1b.css.map": "/maket-sneakers/static/css/main.faaa8c1b.css.map",
+    "main.72fd6556.js.map": "/maket-sneakers/static/js/main.72fd6556.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcd0fca8.css",
-    "static/js/main.7a81acd5.js"
+    "static/css/main.faaa8c1b.css",
+    "static/js/main.72fd6556.js"
   ]
 }
