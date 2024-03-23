@@ -2,7 +2,7 @@
   "name": "maket-sneakers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://NekhayTimur23.github.io/react-trio-group",
+  "homepage": "https://NekhayTimur23.github.io/maket-sneakers/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

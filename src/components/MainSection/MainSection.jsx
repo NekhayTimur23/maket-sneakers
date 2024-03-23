@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "./MainSection.module.sass";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function MainSection() {
-
   const [addCounter, setAddCounter] = useState(0);
+  const [addFovor, setAddFovor] = useState(false);
+  const [addPackaging, setAddPackaging] = useState(false);
 
   const usePlusCounter = () => {
     setAddCounter(addCounter + 1);
@@ -12,6 +12,14 @@ function MainSection() {
 
   const useMinusCounter = () => {
     setAddCounter(addCounter - 1);
+  };
+
+  const onFavor = () => {
+    setAddFovor(!addFovor);
+  };
+
+  const onPackaging = () => {
+    setAddPackaging(!addPackaging)
   };
 
   return (
@@ -27,35 +35,56 @@ function MainSection() {
           <div className={styles.mainCard}>
             <div className={styles.mainCardPhoto}>
               <div className={styles.mainPhotoImg}>
-                <img src={`${process.env.PUBLIC_URL}/main/photoShikers.png`} alt="photoShikers" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/main/photoShikers.png`}
+                  alt="photoShikers"
+                />
               </div>
               <div className={styles.mainPhotoSlide}>
                 <div className={styles.arrowLeft}>
-                  <img src={`${process.env.PUBLIC_URL}/main/arrowLeft.svg`} alt="аrrowLeft" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/arrowLeft.svg`}
+                    alt="аrrowLeft"
+                  />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src={`${process.env.PUBLIC_URL}/main/img1.png`} alt="img1" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/img1.png`}
+                    alt="img1"
+                  />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src={`${process.env.PUBLIC_URL}/main/img2.png`} alt="img2" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/img2.png`}
+                    alt="img2"
+                  />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src={`${process.env.PUBLIC_URL}/main/img3.png`} alt="img3" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/img3.png`}
+                    alt="img3"
+                  />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src={`${process.env.PUBLIC_URL}/main/img4.png`} alt="img4" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/img4.png`}
+                    alt="img4"
+                  />
                 </div>
                 <div className={styles.аrrowRight}>
-                  <img src={`${process.env.PUBLIC_URL}/main/аrrowRight.svg`} alt="аrrowRight" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/main/аrrowRight.svg`}
+                    alt="аrrowRight"
+                  />
                 </div>
               </div>
             </div>
             <div className={styles.mainCardText}>
               <div className={styles.mainCardPriceList}>
                 <div className={styles.mainCardFirstBlock}>
-                  <p className={styles.cardText1}>166 534.00 цена без скидки</p>
+                  <p className={styles.cardText1}>{!addPackaging ? '11 745' : '140 951'} ₽ цена без скидки</p>
                   <div className={styles.cardText2}>
-                    <span>122 566 ₽</span>
+                    <span>{!addPackaging ? '10 213' : '122 566'} ₽</span>
                     <div className={styles.cardTextPercent}>
                       <p>-15%</p>
                     </div>
@@ -64,8 +93,19 @@ function MainSection() {
                     <div className={styles.pieces}>
                       <p>12 штук в уп.</p>
                     </div>
-                    <div className={styles.blokSlider}>
-                      <div className={styles.slider}></div>
+                    <div
+                      onClick={onPackaging}
+                      className={
+                        addPackaging
+                          ? styles.blokSliderOn
+                          : styles.blokSliderOff
+                      }
+                    >
+                      <div
+                        className={
+                          addPackaging ? styles.sliderOn : styles.sliderOff
+                        }
+                      ></div>
                     </div>
                     <span>Заказ упаковкой</span>
                   </div>
@@ -85,50 +125,41 @@ function MainSection() {
                   </div>
                   <div className={styles.cardTextBasket}>
                     <div className={styles.cardTextBasketButton}>
-                      <TransitionGroup>
-                        {addCounter > 0 ? (
-                          <CSSTransition
-                            key="counter"
-                            timeout={400}
-                            classNames={{
-                              enter: styles.fadeEnter,
-                              enterActive: styles.fadeEnterActive,
-                              exit: styles.fadeExit,
-                              exitActive: styles.fadeExitActive,
-                            }}
-                          >
-                            <div
-                              className={`${styles.basketCounter} `}
-                            >
-                              <span onClick={useMinusCounter}>-</span>
-                              <p>{addCounter} шт.</p>
-                              <span onClick={usePlusCounter}>+</span>
-                            </div>
-                          </CSSTransition>
-                        ) : (
-                          <CSSTransition
-                            key="basket"
-                            timeout={400}
-                            classNames={{
-                              enter: styles.fadeEnter,
-                              enterActive: styles.fadeEnterActive,
-                              exit: styles.fadeExit,
-                              exitActive: styles.fadeExitActive,
-                            }}
-                          >
-                            <div
-                              onClick={usePlusCounter}
-                              className={`${styles.basket}`}
-                            >
-                              <img src={`${process.env.PUBLIC_URL}/main/basket2.svg`} alt="basket2" />
-                              <p>В корзину</p>
-                            </div>
-                          </CSSTransition>
-                        )}
-                      </TransitionGroup>
+                      <div
+                        className={[
+                          styles.basketCounter,
+                          addCounter > 0 ? styles.show : styles.hide,
+                        ].join(" ")}
+                      >
+                        <span onClick={useMinusCounter}>-</span>
+                        <p>{addCounter} шт.</p>
+                        <span onClick={usePlusCounter}>+</span>
+                      </div>
+                      <div
+                        onClick={usePlusCounter}
+                        className={[
+                          styles.basket,
+                          addCounter > 0 ? styles.hide : styles.show,
+                        ].join(" ")}
+                      >
+                        <img
+                          src={`${process.env.PUBLIC_URL}/main/basket2.svg`}
+                          alt="basket2"
+                        />
+                        <p>В корзину</p>
+                      </div>
                     </div>
-                    <div className={styles.favourites}>
-                      <img src={`${process.env.PUBLIC_URL}/main/favourites2.svg`} alt="favourites2" />
+                    <div onClick={onFavor} className={styles.favourites}>
+                      <div className={styles.favouritesImg}>
+                        <img
+                          src={
+                            addFovor
+                              ? `${process.env.PUBLIC_URL}/main/favor.svg`
+                              : `${process.env.PUBLIC_URL}/main/favourites2.svg`
+                          }
+                          alt="favourites2"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

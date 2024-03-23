@@ -5,8 +5,6 @@ import NavigationSection from "../NavigationSection/NavigationSection";
 function HeaderSection() {
   const [isFocused, setIsFocused] = useState(false);
 
-console.log(isFocused);
-
   return (
     <div className={styles.headerSection}>
       <div className={styles.headerContainer}>
@@ -26,7 +24,6 @@ console.log(isFocused);
             </div>
           </div>
           <div
-            // className={styles.headerSearch }
             className={isFocused ? styles.headerSearchFocused : styles.headerSearch}
           >
             <input

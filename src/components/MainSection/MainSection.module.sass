@@ -4,7 +4,8 @@
 .cardText2,
 .mainNavigation,
 .cardText3,
-.blokSlider,
+.blokSliderOn,
+.blokSliderOff,
 .mainPhotoSlide,
 .mainCard,
 .cardText4,
@@ -80,6 +81,7 @@
                                 padding-bottom:  32px
                                 border-bottom: 1px solid #E2E4F0
                                 margin-bottom: 32px
+                                position: relative
                                 &>*:not(:last-child)
                                     margin-right: 16px
                                 .pieces
@@ -91,17 +93,25 @@
                                         font-weight: 700
                                         font-size: 14px
                                         color: #828EAD
-                                .blokSlider
+                                .blokSliderOn, .blokSliderOff
                                     width: 40px
                                     height: 24px
                                     border-radius: 32px
-                                    background-color: #1551E5
-                                    .slider
+                                    transition: background-color 0.3s ease
+                                    background-color: #828EAD
+                                    position: relative
+                                    .sliderOff, .sliderOn
                                         width: 20px
                                         height: 20px
                                         background-color: #fff
                                         border-radius: 100px
                                         margin: 0 2px
+                                        position: absolute
+                                        transition: transform 0.3s ease
+                                    .sliderOn
+                                        transform: translateX(80%)
+                                .blokSliderOn
+                                    background-color: #1551E5
                                 .span
                                     font-size: 14px
                                     font-weight: 500
@@ -124,7 +134,7 @@
                                     position: relative
                                     width: 278px
                                     height: 53px
-                                    .basket
+                                    .basket, .basketCounter
                                         display: flex
                                         align-items: center
                                         justify-content: center
@@ -133,33 +143,48 @@
                                         left: 0
                                         right: 0
                                         bottom: 0
-                                        background-color: #1551E5
                                         border-radius: 8px
                                         margin-right: 16px
-                                        color: #fff
-                                        cursor: pointer
                                         img
                                             margin-right: 12px
+                                    .basket
+                                        background-color: #1551E5
+                                        color: #fff
+                                        &:hover
+                                            background: #316CFF
+                                            box-shadow: 0px 12px 16px -7px rgba(21, 81, 229, 0.44)
+                                            border-radius: 8px
                                     .basketCounter
+                                        justify-content: space-between
+                                        padding: 8px 15px
+                                        border: 1px solid #1551E5
+                                        span
+                                            font-size: 28px
+                                            cursor: pointer
+                                    .hide
+                                        opacity: 0
+                                        pointer-events: none
+                                        transition: opacity 0.5s ease
+                                    .show
+                                        opacity: 1
+                                        pointer-events: auto
+                                        transition: opacity 0.5s ease
+                                .favourites
+                                    display: inline-block
+                                    position: relative
+                                    background-color: #f2f6ff
+                                    width: 72px
+                                    height: 56px
+                                    border-radius: 8px
+                                    .favouritesImg
                                         display: flex
                                         align-items: center
-                                        justify-content: space-between
+                                        justify-content: center
                                         position: absolute
                                         top: 0
                                         left: 0
                                         right: 0
                                         bottom: 0
-                                        padding: 8px 15px
-                                        margin-right: 16px
-                                        border: 1px solid #1551E5
-                                        border-radius: 8px
-                                        span
-                                            font-size: 28px
-                                            cursor: pointer
-                                .favourites
-                                    background-color: #F2F6FF
-                                    padding: 20px 30px
-                                    border-radius: 8px
                         .mainCardDescription
                             flex: 1
                             padding: 0 48px
