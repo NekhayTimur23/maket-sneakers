@@ -8,7 +8,7 @@ function FooterSection() {
         <div className={styles.footerContent}>
           <div className={styles.footerCall}>
             <div className={styles.footerCallLeftBlock}>
-              <img src="header/logo.svg" alt="logo" />
+              <img src={`${process.env.PUBLIC_URL}/header/logo.svg`} alt="logo" />
               <div className="">
                 <h5>8 800 841-95-95</h5>
                 <p>Служба поддержки</p>
@@ -64,19 +64,19 @@ function FooterSection() {
           <div className={styles.footerEnd}>
             <div className={styles.footerEndInfo}>
               <div className="">
-                <img src="footer/file.svg" alt="file" />
+                <img src={`${process.env.PUBLIC_URL}/footer/file.svg`} alt="file" />
                 <p>PDF презентация</p>
               </div>
               <div className="">
-                <img src="footer/video.svg" alt="video" />
+                <img src={`${process.env.PUBLIC_URL}/footer/video.svg`} alt="video" />
                 <p>Видео инструкция </p>
               </div>
               <div className="">
-                <img src="footer/faq.svg" alt="faq" />
+                <img src={`${process.env.PUBLIC_URL}/footer/faq.svg`} alt="faq" />
                 <p>FAQ</p>
               </div>
               <div className={styles.footerEndInfoYoutube}>
-                <img src="footer/youtube.svg" alt="youtube" />
+                <img src={`${process.env.PUBLIC_URL}/footer/youtube.svg`} alt="youtube" />
                 <p>Мы на YouTube</p>
               </div>
               <span>Политика конфиденциальности </span>
@@ -92,7 +92,7 @@ function FooterSection() {
               </p>
             </div>
             <div className={styles.footerEndLogo}>
-              <img src="footer/logo2.svg" alt="logo2" />
+              <img src={`${process.env.PUBLIC_URL}/footer/logo2.svg`} alt="logo2" />
               <p>Разработка платформы</p>
             </div>
           </div>

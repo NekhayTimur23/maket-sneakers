@@ -24,11 +24,11 @@ function NavigationSection() {
           </div>
           <div className={styles.navigationRight}>
             <div className={styles.navigationMessage}>
-              <img src="navigation/message.svg" alt="message" />
+              <img src={`${process.env.PUBLIC_URL}/navigation/message.svg`} alt="message" />
               <p>Ваш менеджер</p>
             </div>
             <div className={styles.navigationPercent}>
-              <img src="navigation/percent.svg" alt="percent" />
+              <img src={`${process.env.PUBLIC_URL}/navigation/percent.svg`} alt="percent" />
               <p>Акции</p>
             </div>
             <p>Блог</p>
