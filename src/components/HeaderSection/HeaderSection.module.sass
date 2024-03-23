@@ -11,7 +11,8 @@
         .headerBasket,
         .headerUser,
         .headerLogo,
-        .userInterface
+        .userInterface,
+        .headerSearchFocused
             display: flex
             align-items: center
             margin-right: 24px
@@ -37,16 +38,34 @@
                         height: 24px
             .headerSearch
                 padding: 12px
-                border: 1px solid #E1E5EB
+                border: 1px solid  #E1E5EB
                 border-radius: 8px
                 width: 100%
                 &>*:not(:last-child)
                     margin-right: 12px
-                input
-                    width: 100%
+                .headerInput
+                    width: 90%
                     border: none
                     &:focus
-                        border: none
+                        outline: none
+                img
+                    width: 22px
+                    &:last-child
+                        width: 24px
+            .headerSearchFocused
+                padding: 12px
+                border-radius: 8px
+                width: 100%
+                background: #FFFFFF
+                border: 1px solid #1551E5
+                box-shadow: 0px 0px 6px #BAC4E0
+                &>*:not(:last-child)
+                    margin-right: 12px
+                .headerInput
+                    width: 90%
+                    border: none
+                    &:focus
+                        outline: none
                 img
                     width: 22px
                     &:last-child
@@ -74,4 +93,6 @@
                 .headerUser
                     &>*:not(:last-child)
                         margin-right: 16px
+
+
 

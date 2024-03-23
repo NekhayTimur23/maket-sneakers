@@ -3,11 +3,8 @@ import styles from "./MainSection.module.sass";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 function MainSection() {
-  // const [addCounter, useAddCounter] = useState(0);
 
   const [addCounter, setAddCounter] = useState(0);
-
-  console.log(addCounter);
 
   const usePlusCounter = () => {
     setAddCounter(addCounter + 1);
@@ -30,26 +27,26 @@ function MainSection() {
           <div className={styles.mainCard}>
             <div className={styles.mainCardPhoto}>
               <div className={styles.mainPhotoImg}>
-                <img src="main/photoShikers.png" alt="photoShikers" />
+                <img src={`${process.env.PUBLIC_URL}/main/photoShikers.png`} alt="photoShikers" />
               </div>
               <div className={styles.mainPhotoSlide}>
                 <div className={styles.arrowLeft}>
-                  <img src="main/arrowLeft.svg" alt="аrrowLeft" />
+                  <img src={`${process.env.PUBLIC_URL}/main/arrowLeft.svg`} alt="аrrowLeft" />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src="main/img1.png" alt="img1" />
+                  <img src={`${process.env.PUBLIC_URL}/main/img1.png`} alt="img1" />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src="main/img2.png" alt="img2" />
+                  <img src={`${process.env.PUBLIC_URL}/main/img2.png`} alt="img2" />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src="main/img3.png" alt="img3" />
+                  <img src={`${process.env.PUBLIC_URL}/main/img3.png`} alt="img3" />
                 </div>
                 <div className={styles.imgSlide}>
-                  <img src="main/img4.png" alt="img4" />
+                  <img src={`${process.env.PUBLIC_URL}/main/img4.png`} alt="img4" />
                 </div>
                 <div className={styles.аrrowRight}>
-                  <img src="main/аrrowRight.svg" alt="аrrowRight" />
+                  <img src={`${process.env.PUBLIC_URL}/main/аrrowRight.svg`} alt="аrrowRight" />
                 </div>
               </div>
             </div>
@@ -123,7 +120,7 @@ function MainSection() {
                               onClick={usePlusCounter}
                               className={`${styles.basket}`}
                             >
-                              <img src="main/basket2.svg" alt="basket2" />
+                              <img src={`${process.env.PUBLIC_URL}/main/basket2.svg`} alt="basket2" />
                               <p>В корзину</p>
                             </div>
                           </CSSTransition>
@@ -131,7 +128,7 @@ function MainSection() {
                       </TransitionGroup>
                     </div>
                     <div className={styles.favourites}>
-                      <img src="main/favourites2.svg" alt="favourites2" />
+                      <img src={`${process.env.PUBLIC_URL}/main/favourites2.svg`} alt="favourites2" />
                     </div>
                   </div>
                 </div>
